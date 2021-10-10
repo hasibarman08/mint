@@ -1,6 +1,6 @@
 <template>
-    <v-app>
-        <v-app-bar fixed app elevation="2" class="header">
+    <v-app dark>
+        <v-app-bar app fixed elevation="1" class="header" :color="color">
             <v-container>
                 <v-row align="center">
                     <div class="d-flex align-center">
@@ -20,13 +20,13 @@
                 <notification v-if="hasMessage"/>
                 <v-row>
                     <v-col lg="4" cols="12">
-                        <v-card color="transparent">
+                        <v-card color="transparent" elevation="5">
                             <v-card-text>
                                 <v-list-group  class="elavated"
                                 >
                                     <template v-slot:activator>
                                         <v-list-item-content>
-                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold">pumpkittens</v-list-item-title>
+                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold white--text">pumpkittens</v-list-item-title>
                                         </v-list-item-content>
                                     </template>
                                     <v-btn :to="{name:'home'}" exact block large color="transparent" class="my-3">MINT
@@ -42,7 +42,7 @@
                                 >
                                     <template v-slot:activator>
                                         <v-list-item-content>
-                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold">newkittens</v-list-item-title>
+                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold white--text">newkittens</v-list-item-title>
                                         </v-list-item-content>
                                     </template>
 
@@ -106,7 +106,7 @@
         </v-main>
         <v-footer style="z-index: 1" color="transparent" elevation="2">
             <v-container class="py-3">
-                <div class="text-center font-weight-bold black--text pb-2">Our Socials</div>
+                <div class="text-center font-weight-bold white--text pb-2">Our Socials</div>
                 <v-row align="center" justify="center">
                     <v-btn icon class="ma-1">
                         <a href="https://twitter.com/Pumpkittens" class="link">
@@ -125,7 +125,7 @@
                     </v-btn>
                 </v-row>
                 <v-row></v-row>
-                <div class="text-center font-weight-bold black--text pt-5">
+                <div class="text-center font-weight-bold white--text pt-5">
                     &copy; 2021 Pumpkittens
                 </div>
             </v-container>
@@ -141,7 +141,7 @@
         components: {Notification},
         data() {
             return {
-                currentTab: "mint",
+                color: 'transparent',
             };
         },
         computed: {
@@ -158,7 +158,20 @@
         },
         mounted() {
         },
+         beforeMount() {
+            window.addEventListener('scroll', this.handleScroll);
+        },
+        beforeDestroy() {
+            window.removeEventListener('scroll', this.handleScroll);
+        },
         methods: {
+            handleScroll() {
+                if (window.scrollY > 60) {
+                    this.color = 'black'
+                } else {
+                    this.color = 'transparent'
+                }
+            },
             connectWallet() {
                 this.$store.dispatch("connect")
             },
@@ -171,14 +184,9 @@
 
 <style scoped>
     .link {
-        color: rgb(70, 36, 70);
+        color: white;
         margin: 5px 0;
         text-decoration: none;
     }
 
-    .header {
-        background-color: #f9e1d5c7;
-        background-image: linear-gradient(0deg, #f9e1d5a8 0%, #f9e1d5b2 100%);
-
-    }
 </style>

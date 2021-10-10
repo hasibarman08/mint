@@ -130,7 +130,7 @@ export default {
       margin: 1px 0px;
       padding: 5px 10px;
       font-size: 12px;
-      color:black;
+      color:white;
       height:350px;
   }
 

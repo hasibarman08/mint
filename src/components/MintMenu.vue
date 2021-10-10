@@ -72,7 +72,7 @@ export default {
 
 <style>
     .hilight {
-        color:#000000;
+        color:white;
         margin-left: 10px;
         margin-top: 5px;
         font-family: sans-serif;
