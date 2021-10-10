@@ -22,19 +22,27 @@
                     <v-col lg="4" cols="12">
                         <v-card color="transparent">
                             <v-card-text>
-                                <v-btn :to="{name:'home'}" exact block large color="transparent" class="my-3">MINT
-                                </v-btn>
-                                <v-btn :to="{name:'viewer'}" block large color="transparent" class="my-3">
-                                    PUMPKITTENS VIEWER
-                                </v-btn>
-                                <v-btn :to="{name:'attribute'}" block large color="transparent" class="my-3">
-                                    ATTRIBUTES
-                                </v-btn>
-                                <v-list-group
+                                <v-list-group  class="elavated"
                                 >
                                     <template v-slot:activator>
                                         <v-list-item-content>
-                                            <v-list-item-title class="text-center">newkittens</v-list-item-title>
+                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold">pumpkittens</v-list-item-title>
+                                        </v-list-item-content>
+                                    </template>
+                                    <v-btn :to="{name:'home'}" exact block large color="transparent" class="my-3">MINT
+                                    </v-btn>
+                                    <v-btn :to="{name:'viewer'}" block large color="transparent" class="my-3">
+                                        PUMPKITTENS VIEWER
+                                    </v-btn>
+                                    <v-btn :to="{name:'attribute'}" block large color="transparent" class="my-3">
+                                        ATTRIBUTES
+                                    </v-btn>
+                                </v-list-group>
+                                <v-list-group class="elavated mt-3"
+                                >
+                                    <template v-slot:activator>
+                                        <v-list-item-content>
+                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold">newkittens</v-list-item-title>
                                         </v-list-item-content>
                                     </template>
 
