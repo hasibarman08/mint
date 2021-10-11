@@ -26,7 +26,7 @@
                                 >
                                     <template v-slot:activator>
                                         <v-list-item-content>
-                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold white--text">pumpkittens</v-list-item-title>
+                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold">pumpkittens</v-list-item-title>
                                         </v-list-item-content>
                                     </template>
                                     <v-btn :to="{name:'home'}" exact block large color="transparent" class="my-3">MINT
@@ -42,7 +42,7 @@
                                 >
                                     <template v-slot:activator>
                                         <v-list-item-content>
-                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold white--text">newkittens</v-list-item-title>
+                                            <v-list-item-title class="text-center text-uppercase pl-5 font-weight-bold">newkittens</v-list-item-title>
                                         </v-list-item-content>
                                     </template>
 
@@ -106,7 +106,7 @@
         </v-main>
         <v-footer style="z-index: 1" color="transparent" elevation="2">
             <v-container class="py-3">
-                <div class="text-center font-weight-bold white--text pb-2">Our Socials</div>
+                <div class="text-center font-weight-bold pb-2">Our Socials</div>
                 <v-row align="center" justify="center">
                     <v-btn icon class="ma-1">
                         <a href="https://twitter.com/Pumpkittens" class="link">
@@ -125,7 +125,7 @@
                     </v-btn>
                 </v-row>
                 <v-row></v-row>
-                <div class="text-center font-weight-bold white--text pt-5">
+                <div class="text-center font-weight-bold pt-5">
                     &copy; 2021 Pumpkittens
                 </div>
             </v-container>
